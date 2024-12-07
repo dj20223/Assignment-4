@@ -3,20 +3,20 @@ public class SequentialSearchST<Key, Value> {
 
     private class Node {
         Key key;
-        Value val;
+        Value value;
         Node next;
 
-        public Node(Key key, Value val, Node next) {
+        public Node(Key key, Value value, Node next) {
             this.key = key;
-            this.val = val;
+            this.value = value;
             this.next = next;
         }
     }
 
-    public void put(Key key, Val val) {
+    public void put(Key key, Val value) {
         for (Node x = first; x != null; x = x.next) {
             if (key.equals(x.key)) {
-                x.val = val;
+                x.value = value;
                 return;
             }
         }
@@ -26,7 +26,7 @@ public class SequentialSearchST<Key, Value> {
     public Value getCost(Key key, SeparateChainingHashST<Key, Value> tracker) {
         for (Node x = first; x != null; x = x.next) {
             tracker.incrementComparisons();
-            if (key.equals(x.key)) return x.val;
+            if (key.equals(x.key)) return x.value;
         }
         return null;
     }
