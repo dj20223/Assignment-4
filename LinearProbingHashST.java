@@ -1,4 +1,4 @@
-public class LinearProbingHashST<Key, Value> implements HashTable<Key, Value> {
+public class LinearProbingHashST<Key, Value> implements SymbolTable<Key, Value> {
     private int M; // table size
     private int N; // number of key-value pairs
     private Key[] keys;
@@ -48,11 +48,11 @@ public class LinearProbingHashST<Key, Value> implements HashTable<Key, Value> {
         return get(key) != null;
     }
 
-    public int getComps() {
+    public int getComparisons() {
         return comps;
     }
 
-    public void resetComps() {
+    public void zeroComparisons() {
         comps = 0;
     }
     
